@@ -1,1 +1,1 @@
-# corePractical
+# flaskRepoDemo
