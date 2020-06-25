@@ -1,4 +1,4 @@
-flask-blog-venv/
+venv/
 /__pycache__/
 .vscode/
 *.pyc
