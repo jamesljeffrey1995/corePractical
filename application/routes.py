@@ -1,5 +1,4 @@
 from application import app
-from application.forms import PostForm
 from flask import render_template, redirect, url_for, request, flash
 import string, random
 
