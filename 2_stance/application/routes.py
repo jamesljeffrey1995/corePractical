@@ -13,5 +13,5 @@ def generate_stance():
 
     stance = { "stance" : stance }
 
-    return jsonify(full_trick)
+    return jsonify(stance)
     

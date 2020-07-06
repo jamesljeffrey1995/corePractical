@@ -14,4 +14,6 @@ def generate_full_trick():
     service3_response = requests.get("http://trick_generator:5000/service3/get_package")
     stance = service2_response.json()
     trick = service3_response.json()
-    return jsonify(full_trick)
+
+    stance.update(trick)
+    return jsonify(stance)
