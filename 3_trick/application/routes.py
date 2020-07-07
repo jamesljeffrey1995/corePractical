@@ -8,7 +8,7 @@ import sqlalchemy
 
 @app.route('/service3/get_package', methods = ["GET"])
 def generate_trick():
-    query = Trick.query.filter_by(id=random.randint(1,Trick.query.order_by(Product.id.desc()).first()))
+    query = Trick.query.filter_by(id=random.randint(1,Trick.query.order_by(Trick.id.desc()).first()))
     trick = query.trick
     
     trick = { "trick" : trick }

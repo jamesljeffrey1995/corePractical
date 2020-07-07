@@ -1,9 +1,8 @@
+{{ full_trick[0] }}
+{{ full_trick[1] }}
 
-{{ username }}
-<br>
-<button type="button" onclick="alert('{{ prize }}')">Check if you have won</button>
-<br>
-<button type="button" onclick="location.reload()">Play again</button>
-
-
-
+<div class="form-group">
+    <!-- the form -->
+    <form method='POST' action=''>
+	    {{ generate_trick.hidden_tag() }}
+	    {{ generate_trick.submit }}

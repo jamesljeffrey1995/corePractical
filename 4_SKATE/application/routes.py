@@ -8,7 +8,7 @@ import sqlalchemy
 
 @app.route('/service4/get_package', methods = ["GET"])
 def generate_full_trick():
-    
+    app.logger.info("Request Recieved")    
 
     service2_response = requests.get("http://stance_generator:5000/service2/get_package")
     service3_response = requests.get("http://trick_generator:5000/service3/get_package")
@@ -16,4 +16,5 @@ def generate_full_trick():
     trick = service3_response.json()
 
     stance.update(trick)
+    app.logger.info(f"Object being sent from service 4: {stance}")  
     return jsonify(stance)
