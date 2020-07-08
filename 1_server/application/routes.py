@@ -4,18 +4,20 @@ from application.forms import GenerateTrickButton
 import requests
 
 
-@app.route("/")
+@app.route("/", methods = ['GET', "POST"])
 @app.route("/home", methods = ['GET', "POST"])
 def home():
 
-    generate_trick = GenerateTrickButton()
+    form = GenerateTrickButton()
     if request.method == "GET":
         full_trick = {"stance" : "",
                 "trick" : ""}
+        return render_template("home.html", title = "Home", form = form)
 
-    if generate_trick.is_submitted():
-        response = requests.get("http://SKATE:5000/service4/get_package")
-        full_trick = response.json()
+    if form.validate_on_submit():
         app.logger.info(f"Package requested")
-    return render_template("home.html", title = "Home", full_trick = full_trick, generate_trick=generate_trick)
+        response = requests.get("http://4_SKATE:5003/service4/get_package")
+        full_trick = response.json()
+        app.logger.info(f"{full_trick}")
+    return render_template("home.html", title = "Home", form = form, full_trick = full_trick)
     

@@ -1,8 +1,10 @@
-{{ full_trick[0] }}
-{{ full_trick[1] }}
-
-<div class="form-group">
-    <!-- the form -->
-    <form method='POST' action=''>
-	    {{ generate_trick.hidden_tag() }}
-	    {{ generate_trick.submit }}
+<div class='form'>
+        <form method='POST' action=''>
+            {{ form.hidden_tag() }}
+                <div class='form_group'>
+                {{ form.submit }}
+		</div>
+{% if full_trick %}
+	{{ full_trick["stance"] }}
+	 {{ full_trick["trick"] }}
+{% endif %}
