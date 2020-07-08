@@ -1,0 +1,47 @@
+version: '3.3'
+services:
+        1_server:
+                image: jamesjeffrey/1_server
+                build: ./1_server
+                environment: 
+                          MY_SECRET_KEY: ${MY_SECRET_KEY}
+                ports:
+                        - '5000:5000'
+                depends_on:
+                        - 2_stance
+                        - 3_trick
+                        - 4_SKATE
+
+        2_stance:
+                image: jamesjeffrey/2_stance
+                build: ./2_stance
+                ports:
+                        - '5001:5001'
+
+        3_trick: 
+                image: jamesjeffrey/3_trick
+                build: ./3_trick
+                ports: 
+                        - '5002:5002'
+        4_SKATE:
+                image: jamesjeffrey/4_skate
+                build: ./4_SKATE
+                ports:
+                        - '5003:5003'
+        nginx:
+                image: nginx:latest
+                container_name: nginx
+                ports:
+                        - target: 80
+                          published: 80
+                          protocol: tcp
+
+                depends_on: 
+                        - 1_server
+                        - 2_stance
+                        - 3_trick
+                        - 4_SKATE
+                volumes: 
+                        - type: bind
+                          source: ./nginx/nginx.conf
+                          target: /etc/nginx/nginx.conf

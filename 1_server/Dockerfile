@@ -1,9 +1,7 @@
-FROM python:lates
+FROM python:latest
 
 RUN apt update
 RUN apt install python3-pip -y
-
-WORKDIR /server
 
 COPY . . 
 
