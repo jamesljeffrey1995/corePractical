@@ -1,14 +1,17 @@
-from flask import render_template, redorect, url_for, request, jsonify
-from application import app, pick, db
-from random import randint
+from flask import render_template, redirect, url_for, request, jsonify
+from application import app, db
+import random
 import requests
-from appication.models import Track
+from application.models import Tricks
 import sqlalchemy
 
 
-@app.route('/service3/get_package', methods = ["GET"])
+@app.route('/service3/get_package', methods = ["GET", "POST"])
 def generate_trick():
-    query = Trick.query.filter_by(id=random.randint(1,Trick.query.order_by(Product.id.desc()).first()))
+    app.logger.info("Recieved")
+    randomnum = random.randint(1,10)
+    query = Tricks.query.filter_by(id=randomnum).first()
+    app.logger.info(query.trick)
     trick = query.trick
     
     trick = { "trick" : trick }

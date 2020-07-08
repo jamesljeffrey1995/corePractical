@@ -1,9 +1,10 @@
-
-{{ username }}
-<br>
-<button type="button" onclick="alert('{{ prize }}')">Check if you have won</button>
-<br>
-<button type="button" onclick="location.reload()">Play again</button>
-
-
-
+<div class='form'>
+        <form method='POST' action=''>
+            {{ form.hidden_tag() }}
+                <div class='form_group'>
+                {{ form.submit }}
+		</div>
+{% if full_trick %}
+	{{ full_trick["stance"] }}
+	 {{ full_trick["trick"] }}
+{% endif %}
