@@ -3,36 +3,41 @@ services:
         1_server:
                 image: jamesljeffrey1995/1_server
                 build: ./1_server
-                environment: 
-                          MY_SECRET_KEY: sfsdfsdfsdfsd
+                env_file: .env
                 ports:
                         - '5000:5000'
                 depends_on:
                         - 2_stance
                         - 3_trick
                         - 4_SKATE
+                deploy:
+                        replicas: 3
 
         2_stance:
                 image: jamesljeffrey1995/2_stance
                 build: ./2_stance
                 ports:
                         - '5001:5001'
+                env_file: .env
+                deploy:
+                        replicas: 3
 
         3_trick: 
                 image: jamesljeffrey1995/3_trick
                 build: ./3_trick
                 ports: 
                         - '5002:5002'
-                environment:
-                        USERNAME: ${USERNAME}
-                        PASSWORD: ${PASSWORD}
-                        IP: ${IP}
-                        DATABASE: ${DATABASE}
+                env_file: .env
+                deploy:
+                        replicas: 3
         4_SKATE:
                 image: jamesljeffrey1995/4_skate
                 build: ./4_SKATE
                 ports:
                         - '5003:5003'
+                env_file: .env
+                deploy:
+                        replicas: 3
         nginx:
                 image: nginx:latest
                 container_name: nginx
