@@ -3,7 +3,7 @@ pipeline{
         stages{
             stage('Install Docker using ansible'){
                 steps{
-                        sh "bash execute-ansible.sh"
+                        sh "bash deploy-ansible.sh"
                 }
             }
                 stage('Deploy application'){
