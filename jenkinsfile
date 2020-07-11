@@ -6,7 +6,6 @@ pipeline{
                         sh "bash deploy-ansible.sh"
                 }
             }
-		stage('Set enviroment vars')
                 stage('Deploy application'){
                         steps{
                                 sh "bash docker-build.sh"
