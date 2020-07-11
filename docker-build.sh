@@ -6,6 +6,6 @@ scp -i ~/.ssh/ansible_id_rsa docker-compose.yaml corepractical:/home/jamesljeffr
 ssh -i ~/.ssh/ansible_id_rsa corepractical << EOF
 cd /home/jamesljeffrey1995/corePractical
 docker-compose build
-docker-compose push
+sudo docker-compose push
 env MY_SECRET_KEY=${MY_SECRET_KEY} env USERNAME=${USERNAME} env PASSWORD=${PASSWORD} env IP=${IP} env DATABASE=${DATABASE}  docker stack deploy --compose-file docker-compose.yaml corePractical
 EOF
