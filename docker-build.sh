@@ -1,6 +1,7 @@
 #! /bin/bash
 docker-compose build
 docker-compose push
+scp .env
 scp docker-compose.yaml corepractical:/home/jamesljeffrey1995/corePractical/docker-compose.yaml
 ssh corepractical << EOF
 cd /home/jamesljeffrey1995/corePractical
