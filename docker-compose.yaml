@@ -3,7 +3,12 @@ services:
         1_server:
                 image: jamesljeffrey1995/1_server
                 build: ./1_server
-                env_file: .env
+                environment:
+                        - USERNAME=${USERNAME}
+                        - PASSWORD=${PASSWORD}
+                        - IP=${IP}
+                        - DATABASE=${DATABASE}
+                        - MY_SECRET_KEY=${MY_SECRET_KEY}
                 ports:
                         - '5000:5000'
                 depends_on:
@@ -18,7 +23,13 @@ services:
                 build: ./2_stance
                 ports:
                         - '5001:5001'
-                env_file: .env
+                environment:
+                        - USERNAME=${USERNAME}
+                        - PASSWORD=${PASSWORD}
+                        - IP=${IP}
+                        - DATABASE=${DATABASE}
+                        - MY_SECRET_KEY=${MY_SECRET_KEY}
+
                 deploy:
                         replicas: 3
 
@@ -27,7 +38,12 @@ services:
                 build: ./3_trick
                 ports: 
                         - '5002:5002'
-                env_file: .env
+                environment:
+                        - USERNAME=${USERNAME}
+                        - PASSWORD=${PASSWORD}
+                        - IP=${IP}
+                        - DATABASE=${DATABASE}
+                        - MY_SECRET_KEY=${MY_SECRET_KEY}
                 deploy:
                         replicas: 3
         4_SKATE:
@@ -35,7 +51,12 @@ services:
                 build: ./4_SKATE
                 ports:
                         - '5003:5003'
-                env_file: .env
+                environment:
+                        - USERNAME=${USERNAME}
+                        - PASSWORD=${PASSWORD}
+                        - IP=${IP}
+                        - DATABASE=${DATABASE}
+                        - MY_SECRET_KEY=${MY_SECRET_KEY}
                 deploy:
                         replicas: 3
         nginx:
