@@ -11,7 +11,7 @@ services:
                         - 3_trick
                         - 4_SKATE
                 deploy:
-                        replicas: 3
+                        replicas: 8
 
         2_stance:
                 image: jamesljeffrey1995/2_stance
@@ -20,7 +20,7 @@ services:
                         - '5001:5001'
                 env_file: .env
                 deploy:
-                        replicas: 3
+                        replicas: 8
 
         3_trick: 
                 image: jamesljeffrey1995/3_trick
@@ -29,7 +29,7 @@ services:
                         - '5002:5002'
                 env_file: .env
                 deploy:
-                        replicas: 3
+                        replicas: 8
         4_SKATE:
                 image: jamesljeffrey1995/4_skate
                 build: ./4_SKATE
@@ -37,7 +37,7 @@ services:
                         - '5003:5003'
                 env_file: .env
                 deploy:
-                        replicas: 3
+                        replicas: 8
         nginx:
                 image: nginx:latest
                 container_name: nginx
