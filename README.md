@@ -74,7 +74,14 @@
 <h2>Architecture</h2>
 
 ![diagram](https://i.imgur.com/dXKgatX.png)
-
+<ul>
+  <li>1_server: Sends out a request to 4_SKATE, to return the full trick, that is diplayed on a HTML page.< /li>
+   <li>2_stance: This recieves a request from 4_SKATE, asking for a stance. A random number is generated which determines which ID is chose out of the stance table </li>
+  <li>3_trick: This recieves a request from 4_SKATE, asking for a trick. A random number is generated which determines which ID is chose out of the trick table</li>
+    <li>4_SKATE: This recieves a request from 1_server, so it then send out requests to 2_stance and 3_trick, to get the stance and trick. Once they have been retrieved, the steeze is then calculated, dependent of the stance and trick. Once this is done, these value are stored in a dict and jsonify'd.</li>
+    <li>NGINX: Is used as a reverse proxy, this is so the use does not have direct access to VM's</li>
+    <li>SQL DB: This has preset list within the stance and trick tables, these are queried and information is sent back to the relevant place</li>
+</ul>
 <h3>Entity Diagrams</h3>
 
 ![ed](https://i.imgur.com/EDcIuMl.png)
