@@ -9,15 +9,15 @@ ssh -i ~/.ssh/ansible_id_rsa corepractical << EOF
 
 . /home/jenkins/corePractical/venv/bin/activate
 
-cd /home/jenkins/.jenkins/workspace/corePractical/1_server/Testing
+cd /home/jenkins/corePractical/1_server/Testing
 pytest --cov ~/corePractical/1_server/application
 
-cd /home/jenkins/.jenkins/workspace/corePractical/2_stance/Testing
+cd /home/jenkins/corePractical/2_stance/Testing
 pytest --cov ~/corePractical/2_stance/application
 
-cd /home/jenkins/.jenkins/workspace/corePractical/3_trick/Testing
+cd /home/jenkins/corePractical/3_trick/Testing
 pytest --cov ~/corePractical/3_trick/application
 
-cd /home/jenkins/.jenkins/workspace/corePractical/4_SKATE/Testing
+cd /home/jenkins/corePractical//4_SKATE/Testing
 pytest --cov ~/corePractical/4_SKATE/application 
 EOF
