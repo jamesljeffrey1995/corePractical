@@ -1,0 +1,11 @@
+<div class='form'>
+        <form method='POST' action=''>
+            {{ form.hidden_tag() }}
+                <div class='form_group'>
+                {{ form.submit }}
+		</div>
+{% if full_trick %}
+	{{ full_trick["stance"] }}
+	 {{ full_trick["trick"] }}
+	 {{ full_trick["steeze"] }}
+{% endif %}
