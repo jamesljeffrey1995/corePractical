@@ -13,11 +13,11 @@ cd /home/jenkins/.jenkins/workspace/corePractical/1_server/Testing
 pytest --cov ~/corePractical/1_server/application
 
 cd /home/jenkins/.jenkins/workspace/corePractical/2_stance/Testing
-pytest --cov ~/corePractical/1_server/application
+pytest --cov ~/corePractical/2_stance/application
 
 cd /home/jenkins/.jenkins/workspace/corePractical/3_trick/Testing
-pytest --cov ~/corePractical/1_server/application
+pytest --cov ~/corePractical/3_trick/application
 
 cd /home/jenkins/.jenkins/workspace/corePractical/4_SKATE/Testing
-pytest --cov ~/corePractical/1_server/application 
+pytest --cov ~/corePractical/4_SKATE/application 
 EOF
