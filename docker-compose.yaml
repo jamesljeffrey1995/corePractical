@@ -1,43 +1,5 @@
 version: '3.3'
 services:
-        1_server:
-                image: jamesljeffrey1995/1_server
-                build: ./1_server
-                env_file: .env
-                ports:
-                        - '5000:5000'
-                depends_on:
-                        - 2_stance
-                        - 3_trick
-                        - 4_SKATE
-                deploy:
-                        replicas: 8
-
-        2_stance:
-                image: jamesljeffrey1995/2_stance
-                build: ./2_stance
-                ports:
-                        - '5001:5001'
-                env_file: .env
-                deploy:
-                        replicas: 8
-
-        3_trick: 
-                image: jamesljeffrey1995/3_trick
-                build: ./3_trick
-                ports: 
-                        - '5002:5002'
-                env_file: .env
-                deploy:
-                        replicas: 8
-        4_SKATE:
-                image: jamesljeffrey1995/4_skate
-                build: ./4_SKATE
-                ports:
-                        - '5003:5003'
-                env_file: .env
-                deploy:
-                        replicas: 8
         nginx:
                 image: nginx:latest
                 container_name: nginx
@@ -45,13 +7,7 @@ services:
                         - target: 80
                           published: 80
                           protocol: tcp
-
-                depends_on: 
-                        - 1_server
-                        - 2_stance
-                        - 3_trick
-                        - 4_SKATE
-                volumes: 
+                volumes:
                         - type: bind
                           source: ./nginx/nginx.conf
                           target: /etc/nginx/nginx.conf
