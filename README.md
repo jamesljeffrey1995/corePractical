@@ -94,6 +94,7 @@
 
 <h3>Risk Assessment</h3>
 
+![risk](https://i.imgur.com/MJJ2tm5.png)
 
 <h2>User Stories</h2>
 
