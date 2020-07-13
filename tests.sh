@@ -7,7 +7,7 @@ ssh -i ~/.ssh/ansible_id_rsa corepractical << EOF
 
 
 
-. /home/jamesljeffrey1995/corePractical/venv/bin/activate
+. /home/jamesljeffrey1995/venv/bin/activate
 
 cd /home/jamesljeffrey1995/corePractical/1_server/Testing
 pytest --cov ~/corePractical/1_server/application
