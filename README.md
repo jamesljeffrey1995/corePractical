@@ -1,5 +1,5 @@
 # S.K.A.T.E Trick generator
-
+/
 
 <h2>Contents</h2>
 <ul>
