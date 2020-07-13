@@ -11,7 +11,8 @@ def home():
     form = GenerateTrickButton()
     if request.method == "GET":
         full_trick = {"stance" : "",
-                "trick" : ""}
+                "trick" : "",
+                "steeze": ""}
         return render_template("home.html", title = "Home", form = form)
 
     if form.validate_on_submit():
