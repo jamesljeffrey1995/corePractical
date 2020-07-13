@@ -23,7 +23,7 @@
   <ul>
   <li>
     
-   [ERD](#entity-relationship-diagrams)
+   [ED](#entity-diagrams)
    
    </li>
    
@@ -69,32 +69,64 @@
 <p1>To create an application that creates 'Objects' that is made from a set of predefined rules. This will have to be accopmplished using the technologies and methodologies taught. </p1>
 <br>
 <h3>My application</h3>
-<p1>My project is an application that generates a random skate trick and combining it with a stance.</p1>
+<p1>My project is an application that generates a random skate trick and combining it with a stance. The steeze is dependent on what the stance and trick is.</p1>
 <br>
 <h2>Architecture</h2>
-<h3>Entity Relationship Diagrams</h3>
+
+![diagram](https://i.imgur.com/dXKgatX.png)
+
+<h3>Entity Diagrams</h3>
+
+![ed](https://i.imgur.com/EDcIuMl.png)
+
 <h3>CI-pipeline</h2>
+
+![ci](https://i.imgur.com/SHAnhaC.png)
+
+<p1>The picture is below is the continuous integration pipeline. This allows for rapid and efficient development to deployment. Using webhooks, once the user pushes code to the master branch, the code is tested, if it pasts the tests, then ansible is installed on the machine and docker starts to build the images. This allows for there to me no down time during deployment.</p1>
+
+<h3>Risk Assessment</h3>
+
+
 <h2>User Stories</h2>
 
-<p1>To track the progress of the project and layout what was needed, Githubs project tracker was used to do this.</p1>
+![user](https://i.imgur.com/SnzC0WD.png)
+
+<p1>To track the progress of the project and layout what was needed, Githubs project tracker was used to do this. I linked issues to certain pull-requests therefore slightly automating the kanban board.</p1>
+<p1>The board has several collumns, this allowed to keep tabs on the progress.</p1>
+<ul>
+  <li><i>To do</i>: This showed what was still needed to be completed</li>
+  <li><i>In progress</i>: This shows what is currently being worked on</li>
+  <li><i>Completed</i>: This shows all the issues that have been completed </li>
+  <li><i>User Stories</i>: This shows all the user stories </li>
+</ul>
 
 
 <h2>Testing</h2>
 
 <h3>Unit Testing</h3>
 
+![unit1](https://i.imgur.com/nL9RHXm.png)
+
+![unit2](https://i.imgur.com/GZCBB9e.png)
+
+![unit3](https://i.imgur.com/fHBOMeF.png)
+
+![unit4](https://i.imgur.com/MiSAehd.png)
+
+![unit4a](https://i.imgur.com/X6Ks8oH.png)
+
+<p>High coverage was produced accross all services, unfortunately when implementing new features, I was un able to get high coverage of 4_SKATE. Testing is fully automated, so whenever someone pushes code to master branch, it is tested.</p>
+
 <h2>Known Issues</h2>
 <ul>
-  <li>Dynamic url for products, if the product is deleted, the user can still go to the page but displays nothing apart from the layout.html</li>
-  <li>Gunicorn is deployed constantly</li>
-  <li>Email says it succesfully sent email, but no email is recieved</li> 
+  <li>Due to the limited resources of GCP, after all images are uploaded and updated, sometimes it will revert to the old code, but only for a few seconds.</li>
 </ul>
 
 <h2>Future improvements</h2>
 <ul>
-  <li>Allow for the user to filter styles of boards, length and price</li>
-  <li>Allow for the user to see their orders</li>
-  <li>Group the orders that were made in the same session and create a checkout for all items</li>
+  <li>Allow for the user to store their trick< /li>
+   <li>Higher coverage on 4_SKATE</li>
   <li>Improve the front end, and make it more visually appealing</li>
 </ul>
 
